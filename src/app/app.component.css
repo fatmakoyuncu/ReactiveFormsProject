@@ -1,0 +1,122 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/background3.jpeg);
+    min-height: 660px;
+    background-position: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsla(50, 42%, 69%, 0.75); 
+    padding: 20px 100px 20px 100px;
+    border-radius: 10px;
+  
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: space-between;
+
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+.input-row{
+    display: flex;
+    align-items: center;
+}
+
+.info{
+    display: flex;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.in-col{
+    height: 30px;
+}
+
+.in-col>input{
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+p{
+    white-space: nowrap;
+    padding: 10px 10px 5px 0px;
+    font-size: 20px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+button{
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    margin: 15px;
+    padding: 15px;
+    width: 100px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.ng-invalid.ng-touched{
+    
+    border-color: red;
+}
+
+.error-block{
+    color: red;
+}
+
+span{
+    display: flex;
+    align-items: flex-start;
+    white-space: wrap;
+    font-size: 12px;
+    /* margin-left: 132px; */
+}
+
+.message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: white;
+    background: rgb(141, 95, 63);
+    width: 500px;
+}

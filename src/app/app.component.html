@@ -1,0 +1,83 @@
+<body>
+
+  <div class="container">
+    <div class="row">
+
+      <form [formGroup]="singinForm">
+
+        <h1>Hesap Oluşturun</h1>
+
+        <div class="info">
+
+          <div class="input">
+            <div class="input-row">
+              <div class="col">
+                <p>Kullanıcı Adı:</p>
+              </div>
+              <div class="in-col">
+                <input type="text" formControlName="username" name="name" placeholder="Kullanıcı Adı">
+
+                <span
+                  *ngIf="!singinForm.get('username').valid && singinForm.get('username').touched ||  singinForm.get('username').hasError('isValiExtension')"
+                  class="error-block">
+                  Lütfen Geçerli Bir Kullanıcı Adınızı Giriniz...
+                </span>
+                <span *ngIf="singinForm.get('username').hasError('minlength')" class="error-block">
+                  Kullanıcı adı en az 4 karakter olmalı...
+                </span>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col">
+                <p>Şifre: </p>
+              </div>
+              <div class="in-col">
+                <input type="password" formControlName="password" name="password" placeholder="Şifre">
+
+                <span *ngIf="!singinForm.get('password').valid && singinForm.get('password').touched"
+                  class="error-block">
+                  <span *ngIf="singinForm.get('password').errors['required']">
+                    Lütfen Şifre Giriniz...
+                  </span>
+                </span>
+                <span *ngIf="singinForm.get('password').hasError('minlength')" class="error-block">
+                  Şifre en az 8 karakter olmalı...
+                </span>
+
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="col">
+                <p>Şifre Tekrar:</p>
+              </div>
+              <div class="in-col">
+                <input type="password" formControlName="confirmPassword" name="confirmPassword"
+                  placeholder="Şifre Tekrar">
+
+                <span *ngIf="!singinForm.get('confirmPassword').valid && singinForm.get('confirmPassword').touched"
+                  class="error-block">
+                  <span *ngIf="singinForm.get('confirmPassword').hasError('required')">
+                    Lütfen şifreyi Giriniz.
+                  </span>
+                </span>
+
+                <span
+                  *ngIf="singinForm.hasError('notmatched') && singinForm.get('confirmPassword').valid || singinForm.get('confirmPassword').hasError('minlength')"
+                  class="error-block">
+                  Şifreler Eşleşmedi.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <button (click)="singinUser();" [disabled]='singinForm.invalid' type="submit" name="Kaydol">Kaydol</button>
+        </div>
+
+        <div class="message"> {{message }}  </div>
+
+      </form>
+
+    </div>
+  </div>
+</body>
